@@ -1,0 +1,25 @@
+<h1 class="text-info">Property Binding</h1>
+<h2 class="text-warning">Replicador</h2>
+<div class="d-flex justify-content-center">
+  <div class="w-50">
+    <div class="mb-3">
+      <label for="inputTexto">Escribe Algo:</label>
+      <input
+        type="text"
+        id="inputTexto"
+        class="form-control"
+        (input)="actualizarTexto($event)"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="replicarTexto">Texto Replicado:</label>
+      <input
+        type="text"
+        id="replicarTexto"
+        class="form-control"
+        [value]="texto"
+        readonly
+      />
+    </div>
+  </div>
+</div>

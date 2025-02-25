@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProductoComponent } from '@app/components/producto/producto.component';
+import { ProductoComponent } from '@app/components/Reto 1 Componentes/producto/producto.component';
 
 @Component({
   selector: 'app-listado-productos',
