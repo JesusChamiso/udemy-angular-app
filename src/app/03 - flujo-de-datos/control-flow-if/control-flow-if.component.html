@@ -1,0 +1,21 @@
+<div class="container mt-5 text-center">
+  <h2 class="text-warning">Control Flow IF</h2>
+  <h2>Estado de Autenticacion</h2>
+  <div class="d-flex justify-content-center">
+    @if(isAuthenticated){
+    <div class="w-50 alert alert-success">
+      <p class="text-success">Estas Autenticado</p>
+    </div>
+    }@else{
+    <div class="w-50 alert alert-danger">
+      <p class="text-danger">No estas Autenticado</p>
+    </div>
+    }
+  </div>
+  <button
+    class="btn btn-primary mt-3"
+    (click)="isAuthenticated = !isAuthenticated"
+  >
+    Alternar Estado de Autenticacion
+  </button>
+</div>
