@@ -1,0 +1,5 @@
+<h2 class="text-warning">Tienda Online - Listado de productos</h2>
+<div class="container mt-2">
+  <app-listado-productos [productos]="productos" />
+  <app-formulario (nuevoProducto)="agregarProducto($event)" />
+</div>

@@ -13,6 +13,12 @@ import {
   LocalReferenceComponent,
 } from './03 - flujo-de-datos';
 import { ListadoProductosComponent } from './components/Reto 3 Flujo de Datos';
+import { CalculadoraMainComponent } from './04 - Comunicacion entre componentes/calculadora';
+import {
+  ViewChildComponent,
+  PadreComponent,
+} from './04 - Comunicacion entre componentes';
+import { MainComponent } from './components/Reto 4 Comunicacion entre Componentes';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +32,10 @@ import { ListadoProductosComponent } from './components/Reto 3 Flujo de Datos';
     ControlFlowIfComponent,
     LocalReferenceComponent,
     ControlFlowForComponent,
+    PadreComponent,
+    CalculadoraMainComponent,
+    ViewChildComponent,
+    MainComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
