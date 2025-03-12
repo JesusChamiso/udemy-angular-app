@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-event-binding',
@@ -8,10 +9,18 @@ import { Component } from '@angular/core';
 })
 export class EventBindingComponent {
   protected mensaje: string = '';
-  resetearMensaje() {
-    this.mensaje = '';
+
+  private route = inject(ActivatedRoute);
+
+  ngOnInit() {
+    this.mensaje = this.route.snapshot.queryParams['mensaje'];
   }
+
   mostrarMensaje() {
     this.mensaje = 'Hola has hecho click en el Boton';
+  }
+
+  resetearMensaje() {
+    this.mensaje = '';
   }
 }

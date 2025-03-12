@@ -1,3 +1,4 @@
+import { RouterOutlet } from '@angular/router';
 import { UsuariosService } from './../usuarios.service';
 import { Component, inject } from '@angular/core';
 
@@ -12,6 +13,7 @@ export class ListadoUsuariosComponent {
   usuariosServices = inject(UsuariosService);
   ngOnInit() {
     this.usuariosServices.obtenerDatos().subscribe((data) => {
+      // console.log(data);
       this.usuarios = data;
     });
   }

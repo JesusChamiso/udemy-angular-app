@@ -1,6 +1,7 @@
+import { Router } from '@angular/router';
 import { ProductoService } from '../producto.service';
-import { Producto } from './../../Reto 3 Flujo de Datos/producto.model';
 import { Component, inject, input } from '@angular/core';
+import { Producto } from '../producto.model';
 
 @Component({
   selector: 'app-producto',
@@ -12,7 +13,10 @@ export class ProductoComponent {
   producto = input.required<Producto>();
 
   private productoService = inject(ProductoService);
-  emitirDetalleProducto() {
-    this.productoService.detalleProductoEmmiter.emit(this.producto());
+
+  private router = inject(Router);
+
+  editarProducto(id: number) {
+    this.router.navigate(['tienda-online/editar', id]);
   }
 }

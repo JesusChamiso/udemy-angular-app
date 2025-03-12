@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import {
-  FormularioComponent,
   ListadoProductosComponent,
   Producto,
   ProductoService,
@@ -8,7 +8,7 @@ import {
 
 @Component({
   selector: 'app-main2',
-  imports: [ListadoProductosComponent, FormularioComponent],
+  imports: [ListadoProductosComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css',
 })
@@ -16,11 +16,10 @@ export class MainComponent {
   productos: Producto[] = [];
 
   private productoService = inject(ProductoService);
-  constructor() {
-    this.productoService.detalleProductoEmmiter.subscribe(
-      (producto: Producto) =>
-        alert(`Producto: ${producto.descripcion}, Precio: $${producto.precio}`)
-    );
+  private router = inject(Router);
+
+  agregarProducto() {
+    this.router.navigate(['tienda-online/agregar']);
   }
 
   ngOnInit() {

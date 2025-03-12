@@ -26,6 +26,7 @@ import { EjemploPipesComponent } from './06 - Pipes';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import { PresupuestoMainComponent } from './components/Reto 6 Formulario Presupuesto/presupuesto-main/presupuesto-main.component';
+import { NavegacionComponent } from './07 - Routing';
 
 registerLocaleData(localeEs, 'es');
 
@@ -49,6 +50,7 @@ registerLocaleData(localeEs, 'es');
     MainComponent2,
     EjemploPipesComponent,
     PresupuestoMainComponent,
+    NavegacionComponent,
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   templateUrl: './app.component.html',

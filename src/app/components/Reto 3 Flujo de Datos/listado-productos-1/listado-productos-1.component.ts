@@ -3,10 +3,10 @@ import { Producto } from '../producto.model';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-listado-productos',
+  selector: 'app-listado-productos-1',
   imports: [FormsModule],
-  templateUrl: './listado-productos.component.html',
-  styleUrl: './listado-productos.component.css',
+  templateUrl: './listado-productos-1.component.html',
+  styleUrl: './listado-productos-1.component.css',
 })
 export class ListadoProductosComponent {
   protected productos: Producto[] = [
