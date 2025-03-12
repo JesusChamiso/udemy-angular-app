@@ -1,5 +1,5 @@
 import { MainComponent } from './components/Reto 4 Comunicacion entre Componentes/main/main.component';
-import { Component, inject } from '@angular/core';
+import { Component, inject, LOCALE_ID } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CalculadoraComponent } from '@app/components';
 import {
@@ -22,6 +22,12 @@ import {
 import { MainComponent as MainComponent1 } from './components/Reto 4 Comunicacion entre Componentes';
 import { ListadoUsuariosComponent, MensajeService } from './05 - Servicios';
 import { MainComponent as MainComponent2 } from './components/Reto 5 Servicios TiendaOnline';
+import { EjemploPipesComponent } from './06 - Pipes';
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+import { PresupuestoMainComponent } from './components/Reto 6 Formulario Presupuesto/presupuesto-main/presupuesto-main.component';
+
+registerLocaleData(localeEs, 'es');
 
 @Component({
   selector: 'app-root',
@@ -41,7 +47,10 @@ import { MainComponent as MainComponent2 } from './components/Reto 5 Servicios T
     MainComponent1,
     ListadoUsuariosComponent,
     MainComponent2,
+    EjemploPipesComponent,
+    PresupuestoMainComponent,
   ],
+  providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
