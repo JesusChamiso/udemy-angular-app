@@ -1,5 +1,4 @@
 import { Router } from '@angular/router';
-import { ProductoService } from '../producto.service';
 import { Component, inject, input } from '@angular/core';
 import { Producto } from '../producto.model';
 
@@ -11,12 +10,11 @@ import { Producto } from '../producto.model';
 })
 export class ProductoComponent {
   producto = input.required<Producto>();
-
-  private productoService = inject(ProductoService);
+  llave = input<string>();
 
   private router = inject(Router);
 
-  editarProducto(id: number) {
-    this.router.navigate(['tienda-online/editar', id]);
+  editarProducto(llave: string) {
+    this.router.navigate(['tienda-online/editar', this.llave()]);
   }
 }

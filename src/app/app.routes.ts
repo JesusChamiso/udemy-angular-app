@@ -44,7 +44,7 @@ export const routes: Routes = [
         component: FormularioComponent,
       },
       {
-        path: 'editar/:id',
+        path: 'editar/:llave',
         component: FormularioComponent,
       },
     ],

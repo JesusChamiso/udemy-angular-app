@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './formulario.component.css',
 })
 export class FormularioComponent {
-  productoId: number | null = null;
+  llaveProducto: string | null = null;
   descripcionInput: string = '';
   precioInput: number | null = null;
   productoService = inject(ProductoService);
@@ -20,13 +20,13 @@ export class FormularioComponent {
 
   ngOnInit() {
     // Verificar si se debe cargar un producto existente
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      const producto = this.productoService.getProductoById(Number(id));
+    const llave = this.route.snapshot.paramMap.get('llave');
+    if (llave) {
+      const producto = this.productoService.getProductoByLlave(llave);
       if (producto) {
         // si encontramos un producto lo cargamos en el formulario
-        this.productoId = producto.id;
-        this.descripcionInput = producto.descripcion.trim();
+        this.llaveProducto = llave;
+        this.descripcionInput = producto.descripcion;
         this.precioInput = producto.precio;
       }
     }
@@ -41,11 +41,8 @@ export class FormularioComponent {
       alert('Por favor, ingrese una descripción y un precio válidos.');
     } else {
       this.productoService.guardarProducto(
-        new Producto(
-          this.productoId,
-          this.descripcionInput.trim(),
-          this.precioInput
-        )
+        new Producto(this.descripcionInput.trim(), this.precioInput),
+        this.llaveProducto
       );
       this.limpiar();
     }
@@ -53,9 +50,9 @@ export class FormularioComponent {
   }
 
   eliminarProducto() {
-    if (this.productoId !== null) {
-      this.productoService.eliminarProducto(this.productoId);
-      this.productoId = null;
+    if (this.llaveProducto !== null) {
+      this.productoService.eliminarProducto(this.llaveProducto);
+      this.llaveProducto = null;
       this.descripcionInput = '';
       this.precioInput = null;
       this.router.navigate(['tienda-online/listado']);
@@ -67,7 +64,7 @@ export class FormularioComponent {
   }
 
   limpiar() {
-    this.productoId = null;
+    this.llaveProducto = null;
     this.descripcionInput = '';
     this.precioInput = null;
   }
