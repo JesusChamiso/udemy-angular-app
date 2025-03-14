@@ -21,6 +21,7 @@
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "firebase": "^11.4.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -37,5 +38,14 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.7.2"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "@firebase/util",
+      "protobufjs"
+    ],
+    "onlyBuiltDependencies": [
+      "@firebase/util"
+    ]
   }
 }

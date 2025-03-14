@@ -8,18 +8,23 @@ import {
   MainComponent,
 } from './components/Reto 5 Servicios TiendaOnline';
 import { ErrorComponent } from './components';
+import { LoginComponent } from './components/auth/login/login.component';
+import { LoginGuardService } from './components/auth';
 
 export const routes: Routes = [
   {
     path: '',
+    canActivate: [LoginGuardService],
     component: ListadoUsuariosComponent,
   },
   {
     path: 'mostrar-mensaje',
+    canActivate: [LoginGuardService],
     component: EventBindingComponent,
   },
   {
     path: 'configuracion',
+    canActivate: [LoginGuardService],
     children: [
       {
         path: 'padre',
@@ -34,6 +39,7 @@ export const routes: Routes = [
   // Tienda OnLine
   {
     path: 'tienda-online',
+    canActivate: [LoginGuardService],
     children: [
       {
         path: 'listado',
@@ -48,6 +54,10 @@ export const routes: Routes = [
         component: FormularioComponent,
       },
     ],
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   // Ruta comodin para ruta no registrada
   {
