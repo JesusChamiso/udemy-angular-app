@@ -8,7 +8,7 @@ import { initializeApp } from 'firebase/app';
 })
 export class FirebaseService {
   firebaseConfig = {
-    apiKey: 'AIzaSyAzRYFXHdxvs7_CHucNu5RHZfwmxvst4Fg',
+    apiKey: '',
     authDomain: 'tienda-online-angular-ddf85.firebaseapp.com',
     databaseURL:
       'https://tienda-online-angular-ddf85-default-rtdb.firebaseio.com',
